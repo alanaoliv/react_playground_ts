@@ -1,6 +1,28 @@
+import { useState } from "react"
+import Home from "../home/Home";
+
 function Login() {
+  
+  const [isLogged, setIsLogged] = useState(false);
+
   return (
-    <div>Login</div>
+    <div>
+    {isLogged ? (
+        <Home
+        titulo="Componente Home"
+        texto="Bem-vinde de volta!"
+      />
+
+      ) : (
+        <div>
+          <h2>Login</h2>
+          <button onClick={() => setIsLogged(true)}>
+            Entrar
+          </button>
+        </div>
+      )
+    }
+    </div>
   )
 }
 
